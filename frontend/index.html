@@ -8,6 +8,7 @@
 </head>
 <body>
     <div ng-app="myApp" ng-controller='myCtrl'>
+            <p>ID : <input type="text" ng-model="id" ></p>
             <p>Dia: <input type="text" ng-model="dia" ></p>
             <p>Nome: <input type="text" ng-model="nome" ></p>
             <p>Valor: <input type="text" ng-model="valor" ></p>
@@ -17,8 +18,23 @@
             <button ng-click="insert()">insert</button>
             <button ng-click="delete()">delete</button>
             <button ng-click="put()">put</button>
-              
+            <table border="1">
+                <tr>
+                    <th>id</th>
+                    <th>nome</th>
+                    <th>dia</th>
+                    <th>valor</th>
+                    <th>ações</th>
+                </tr>
+                <tr ng-repeat="manutencao in manutencoes">
+                    <td>{{manutencao.id}}</td>
+                    <td>{{manutencao.nome}}</td>
+                    <td>{{manutencao.dia}}</td>
+                    <td>{{manutencao.valor}}</td>
+                    <td>editar | excluir</td>
+                </tr>
+            </table>   
     </div>
-    
+   
 </body>
 </html>
